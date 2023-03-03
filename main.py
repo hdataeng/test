@@ -72,6 +72,6 @@ if __name__ == "__main__":
             mower = Mower(int(x), int(y), orientation)
         
             instructions = f.readline().strip()
-            execute_instructions(instructions)
-            correct_position(mower,lawn_x,lawn_y)
+            mower.execute_instructions(instructions)
+            mower.correct_position(mower,lawn_x,lawn_y)
             print(mower.get_position())
