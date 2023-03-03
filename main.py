@@ -6,14 +6,14 @@ class Mower:
 
     def execute_instructions(self, instructions):
     
-    for instruction in instructions:
-    match instruction:
-        case 'D':
-            self.turn_right()
-        case 'G':
-            self.turn_left()
-        case 'A':
-            self.move_ahead()
+        for instruction in instructions:
+            match instruction:
+                case 'D':
+                    self.turn_right()
+                case 'G':
+                    self.turn_left()
+                case 'A':
+                    self.move_ahead()
 
                 
     def move_ahead(self):
@@ -65,13 +65,13 @@ class Mower:
    
 if __name__ == "__main__":   
     with open('input.txt', 'r') as f:
-    lawn_x, lawn_y = map(int, f.readline().strip().split())
+        lawn_x, lawn_y = map(int, f.readline().strip().split())
     
-    for line in f:
-        x, y, orientation = line.split()
-        mower = Mower(int(x), int(y), orientation)
+        for line in f:
+            x, y, orientation = line.split()
+            mower = Mower(int(x), int(y), orientation)
         
-        instructions = f.readline().strip()
-        execute_instructions(instructions)
-        correct_position(mower,lawn_x,lawn_y)
-        print(mower.get_position())
+            instructions = f.readline().strip()
+            execute_instructions(instructions)
+            correct_position(mower,lawn_x,lawn_y)
+            print(mower.get_position())
