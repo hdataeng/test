@@ -1,1 +1,31 @@
-t
+
+Topic	AHE Databricks to SAS BI Connection
+Description	This page aims to provide the steps to follow to establish a connection between Databricks workspace and SAS BI Application.
+Platform	
+ 
+
+Databricks to SAS BI Connection 
+Below steps explains the process on how we can enable Databricks to SAS BI connection.
+
+Pre-requisites 
+Databricks should be deployed in Custom connected Vnet. This means that Databricks should be deployed in our own vnet and not in the default vnet provided by CBSP. This allows Databricks to connect to on-premise applications, in this case its SAS BI. 
+Having access to DevOps pipelines to modify the NSG rules. 
+
+
+1
+Raise a request to KPN to whitelist SAS BI IPs at Auzre Firewall level. This request should be both ways. Please find the link below to raise a request.
+
+
+2
+Add NSG inbound and outbound rules to ADB Subnet to allow SAS BI IPs
+
+This can be done using Self-service networking fscp devops task
+
+3
+SAS BI team requests with KPN to allow Databricks URL at ZIF 
+
+4
+Some configuration changes at SAS BI side has to happen
+
+Databricks jar setup
+JDBC configuration
